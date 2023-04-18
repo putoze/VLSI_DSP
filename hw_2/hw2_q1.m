@@ -1,10 +1,10 @@
 clear all;
 
 % Note sequence starting from 1~60
-Sample_size = 6000; %100
+Sample_size = 100; %100/6000
 n = 1:Sample_size;
 L = 15;
-mu = 0.0001; %0.01
+mu = 0.01; %0.01/0.0001
 
 %Input signal xn(n)
 xn = sin(2 * pi * (n / 12)) + cos(2 * pi * (n / 4));
@@ -43,15 +43,13 @@ title('RMS in time'); xlabel('n*sampleSteps'); ylabel('Amplitude');
 % Plot of Coefficients v.s. steps
 figure(2);
 %disp(wn_all);
-wn_all = wn_all';
-%disp(wn_all);
-stem(wn_all(coefficient_spaced, :));
+plot(1:Sample_size,wn_all);
 title('Coefficients of bi'); xlabel('n*coefficient steps'); ylabel('Amplitude');
 
 % FFT for the impulse response of converged filters.
 N = 64;
 wn_padded = zeros(1, N);
-wn_padded(1:L) = wn_all(steps:1:steps+L-1);
+wn_padded(1:L) = wn_all(steps-L+1:steps);
 
 figure(3);
 Y = fft(wn_padded, N);
@@ -70,21 +68,24 @@ function [wn_all,d_hat,en,rn,steps] = LMS(xn,dn,Sample_size,L,mu)
     disp(desired_rn);
     % LMS w(n+1)=w(n)+mu‧e(n)‧X*(n)
     wn = zeros(1, L); 
-    wn_all = zeros(1, Sample_size); 
+    wn_all = zeros(L, Sample_size); 
     d_hat = zeros(1, Sample_size);
     en = zeros(1, Sample_size);
     rn = zeros(1, Sample_size);
     for n = 2 : Sample_size
+        times = 0;
         for k = 1 : L
             if (n - k) > 0
                 d_hat_tmp = wn(k)*xn(n-k);
                 d_hat(n) = d_hat(n) + d_hat_tmp;
                 en(n) = dn(n) - d_hat(n);
                 wn(k) = wn(k) + mu*en(n)*xn(n-k);
-                wn_all(n-k+L) = wn(k);
+                times = times + 1;
             end
         end
-        % RMS
+        % update wn_all
+        wn_all(:,n) = wn;
+        % RMS 
         if n <= L
             rn(n) = sqrt(mean(en(n:-1:1).^2));
         else 
