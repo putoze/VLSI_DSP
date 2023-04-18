@@ -8,13 +8,14 @@
 # INDEX
 - [Adaptive FIR Low pass filter](#i-adaptive-fir-low-pass-filter)
   - [Q1 Result](#q1-result)
+- [2D-DWT](#ii-2d-dwt)
 - [References](#iii-references)
 
 
 # I. Adaptive FIR Low pass filter
 ## Problem
 <p align="center">
-  <img src="./img/problem_1.jpg" width="600" heigh ="400">
+  <img src="./img/problem_1.jpg" width="600" heigh ="600">
 </p>
 
 <div style="page-break-after: always;"></div>
@@ -22,7 +23,7 @@
 # Derivation steps
 ### Adaptive Filter specification
 <p align="center">
-  <img src="./img/adaptive_filter_structure.jpg" width="400" heigh ="400">
+  <img src="./img/adaptive_filter_structure.jpg" width="600" heigh ="600">
 </p>
 
 
@@ -34,11 +35,11 @@
 
 ### The adaptive FIR filter
 <p align="center">
-  <img src="./img/desired_signal_generation_fir_filter.jpg" width="400" heigh ="400">
+  <img src="./img/desired_signal_generation_fir_filter.jpg" width="600" heigh ="600">
 </p>
 
 <p align="center">
-  <img src="./img/fir_filter_structure.png" width="400" heigh ="400">
+  <img src="./img/fir_filter_structure.png" width="600" heigh ="600">
 </p>
 
 - The desired output is genereated through the p-tap FIR filter design, where wn is the coefficients that gets updated on the fly.
@@ -47,7 +48,7 @@
 
 ### Error function
 <p align="center">
-  <img src="./img/error.jpg" width="400" heigh ="400">
+  <img src="./img/error.jpg" width="600" heigh ="600">
 </p>
 
 - Error function simply is the difference between the desired signal and the generated system response.
@@ -58,7 +59,7 @@
 
 ### LMS algorithm
 <p align="center">
-  <img src="./img/lms_algorithm.jpg" width="400" heigh ="400">
+  <img src="./img/lms_algorithm.jpg" width="600" heigh ="600">
 </p>
 
 - mu is the step sizes for the algorithm, which governs the variability of the coefficients in each iteration.
@@ -66,7 +67,7 @@
 
 ### RMS(Root mean square)
 <p align="center">
-  <img src="./img/RMS.jpg" width="400" heigh ="400">
+  <img src="./img/RMS.jpg" width="600" heigh ="600">
 </p>
 
 - Root mean square used to find the norm of the error vector, we hope that this value be as small as possible s.t. the system is converged.
@@ -96,6 +97,60 @@ Total Steps needed to reach 10% of RMS 4570
 RMS value 0.0707
 ```
 
+# II. 2D-DWT
+
+## Problem
+
+<p align="center">
+  <img src="./img/problem2_1.jpg" width="600" >
+</p>
+
+<p align="center">
+  <img src="./img/filter_spec_problem.jpg" width="600" >
+</p>
+
+<p align="center">
+  <img src="./img/problem2_a.jpg" width="600" >
+</p>
+
+<p align="center">
+  <img src="./img/problem2_b.jpg" width="600" >
+</p>
+
+<p align="center">
+  <img src="./img/problem2_example.jpg" width="600" >
+</p>
+
+### 3‐level_DWT
+
+<p align="center">
+  <img src="./img/3‐level_DWT.png" width="600" >
+</p>
+
+### 3‐level_IDWT
+
+<p align="center">
+  <img src="./img/3‐level_IDWT.png" width="600" >
+</p>
+
+### 2D-DWT
+
+<p align="center">
+  <img src="./img/2D_DWT.png" width="600" >
+</p>
+
+### wavelet
+
+<p align="center">
+  <img src="./img/wavelet_fourier.jpg" width="600" >
+</p>
+
+<p align="center">
+  <img src="./img/wavelet_time_frequency.jpg" width="600" >
+</p>
+
+
+
 # III. References
 
 [1] [Advanced Digital Signal Processing, Adaptive Filters by Prof.Vaibhav Pandit](https://www.youtube.com/watch?v=088g4IB9blI)
@@ -111,3 +166,5 @@ RMS value 0.0707
 [6] [VLSI Digital Signal processing systems Design and Implementation, p25~28 by Parhi]()
 
 [7] [Image Denoising Based on Improved Wavelet Threshold Function for Wireless Camera Networks and Transmissions,Sep 2015, Reserach Gate,Xiaoyu Wang Xiaoxu Ou Bo-Wei Chen Mucheol Kim](https://www.researchgate.net/figure/The-inverse-discrete-wavelet-transform-Here-h-i-i14-i-i-h-i-i14-i-i-h-i_fig7_283882847)
+
+[8] [离散小波变换(Discrete Wavelet Transform)](https://blog.csdn.net/sunshihua12829/article/details/50285375)

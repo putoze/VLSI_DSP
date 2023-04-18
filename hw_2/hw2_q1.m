@@ -1,10 +1,10 @@
 clear all;
 
 % Note sequence starting from 1~60
-Sample_size = 100; %100/6000
+Sample_size = 6000; %100/6000
 n = 1:Sample_size;
 L = 15;
-mu = 0.01; %0.01/0.0001
+mu = 0.0001; %0.01/0.0001
 
 %Input signal xn(n)
 xn = sin(2 * pi * (n / 12)) + cos(2 * pi * (n / 4));
