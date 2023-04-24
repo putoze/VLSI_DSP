@@ -121,6 +121,13 @@ RMS value 0.0707
   <img src="./img/problem2_example.jpg" width="600" >
 </p>
 
+### symmetric_extension
+
+<p align="center">
+  <img src="./img/symmetric_extension.jpg" width="600" >
+</p>
+
+
 ### 1D 3‐level_DWT
 
 <p align="center">
@@ -192,6 +199,16 @@ RMS value 0.0707
 <p align="center">
   <img src="./img/octave1_idwt.png" width="600" >
 </p>
+
+### psnr
+
+<p align="center">
+  <img src="./img/PSNR_MSE.jpg" width="600" >
+</p>
+
+```
+psnr = 234.2033
+```
 
 # III. References
 
