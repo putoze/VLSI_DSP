@@ -121,13 +121,13 @@ RMS value 0.0707
   <img src="./img/problem2_example.jpg" width="600" >
 </p>
 
-### 3‐level_DWT
+### 1D 3‐level_DWT
 
 <p align="center">
   <img src="./img/3‐level_DWT.png" width="600" >
 </p>
 
-### 3‐level_IDWT
+### 1D 3‐level_IDWT
 
 <p align="center">
   <img src="./img/3‐level_IDWT.png" width="600" >
@@ -137,6 +137,12 @@ RMS value 0.0707
 
 <p align="center">
   <img src="./img/2D_DWT.png" width="600" >
+</p>
+
+### 2D-IDWT
+
+<p align="center">
+  <img src="./img/2D_IDWT.png" width="600" >
 </p>
 
 ### wavelet
@@ -149,7 +155,43 @@ RMS value 0.0707
   <img src="./img/wavelet_time_frequency.jpg" width="600" >
 </p>
 
+## Q2 Result
 
+### octave1_dwt
+
+<p align="center">
+  <img src="./img/octave1_dwt.png" width="600" >
+</p>
+
+### octave2_dwt
+
+<p align="center">
+  <img src="./img/octave2_dwt.png" width="600" >
+</p>
+
+### octave3_dwt
+
+<p align="center">
+  <img src="./img/octave3_dwt.png" width="600" >
+</p>
+
+### octave3_idwt
+
+<p align="center">
+  <img src="./img/octave3_idwt.png" width="600" >
+</p>
+
+### octave2_idwt
+
+<p align="center">
+  <img src="./img/octave2_idwt.png" width="600" >
+</p>
+
+### octave1_idwt
+
+<p align="center">
+  <img src="./img/octave1_idwt.png" width="600" >
+</p>
 
 # III. References
 
