@@ -132,16 +132,23 @@ function [output] = filter(input,weight,low_or_high,dwt_flag) %dwt:1/idwt:0
     len_in = length(input);
     len_filter = length(weight) ;
     len_filter_tap = (len_filter - 1) / 2;
+   
     if dwt_flag == 1
-        len_dot = len_in/2;
+        len_out = len_in/2;
     else
-        len_dot = len_in;
+        len_out = len_in*2;
     end
     %output
-    output = zeros(1,len_dot);
+    output = zeros(1,len_out);
+    if dwt_flag == 1
+        ext_in = input;
+    else
+        ext_in = output;
+        ext_in(2-low_or_high:2:end) = input;
+    end
     %filter function
-    in_syn_extesion = syn_extesion(input,len_filter_tap);
-    for i = 1 : len_dot
+    in_syn_extesion = syn_extesion(ext_in,len_filter_tap);
+    for i = 1 : len_out
         if dwt_flag == 1
             output(i) = dot(in_syn_extesion( (2*i-low_or_high):1:(2*i-low_or_high)+len_filter-1),weight);%low:1/high:0
         else 
@@ -168,25 +175,18 @@ function [out_img] = idwt_2d_97(LL, LH, HL, HH)
     H1_tmp2 = zeros(row*2, col);
     H1      = zeros(row*2, col);
     out_img = zeros(row*2, col*2);
-    
-    LL_up = (upsample(LL,2));
-    LH_up = (upsample(LH,2,1));
-    HL_up = (upsample(HL,2));
-    HH_up = (upsample(HH,2,1));
     % Apply the 9/7 filter
     for j = 1 : col
-        L1_tmp1(:,j) = (filter(LL_up(:,j)',q,1,0))';
-        L1_tmp2(:,j) = (filter(LH_up(:,j)',p,0,0))';
+        L1_tmp1(:,j) = (filter(LL(:,j)',q,1,0))';
+        L1_tmp2(:,j) = (filter(LH(:,j)',p,0,0))';
         L1(:,j) = L1_tmp1(:,j) + L1_tmp2(:,j);
-        H1_tmp1(:,j) = (filter(HL_up(:,j)',q,1,0))';
-        H1_tmp2(:,j) = (filter(HH_up(:,j)',p,0,0))';
+        H1_tmp1(:,j) = (filter(HL(:,j)',q,1,0))';
+        H1_tmp2(:,j) = (filter(HH(:,j)',p,0,0))';
         H1(:,j) = H1_tmp1(:,j) + H1_tmp2(:,j);
     end
-    H1_up = upsample(H1',2,1)';
-    L1_up = upsample(L1',2)';
     for i = 1 : row*2
-        out_img(i,:) = filter(H1_up(i,:),p,0,0); 
-        out_img(i,:) = out_img(i,:) + filter(L1_up(i,:),q,1,0); 
+        out_img(i,:) = filter(H1(i,:),p,0,0); 
+        out_img(i,:) = out_img(i,:) + filter(L1(i,:),q,1,0); 
     end
 end
 
