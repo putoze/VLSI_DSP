@@ -93,7 +93,7 @@ $$
 $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
 
 <p align="middle">
-  <img src="img/insertion_sort_eg.jpg" width="800" />
+  <img src="img/insertion_sort_eg.jpg" width="500" />
 </p>
 
 ## Ref
@@ -103,3 +103,5 @@ $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
 
 [2] [Markdown 文本居中、字体颜色以及数学公式
 ](https://blog.csdn.net/silver1225/article/details/89036250)
+
+[3] [VLSI Signal processing](http://twins.ee.nctu.edu.tw/courses/vsp_04/handout/Lecture%205.pdf)
