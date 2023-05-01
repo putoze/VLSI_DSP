@@ -1,10 +1,11 @@
 # Ch5 note
 
-## [DG Design](http://media.ee.ntu.edu.tw/courses/dspdesign/16F/slide/7_systolic_architecture_design.pdf)
+## DG Design in PDF(P9~P16)
 - Write the recursive form of an algorithm
 - Transform it into a Single Assignment Code
 - Draw DG
 - Localized DG
+- [link](http://media.ee.ntu.edu.tw/courses/dspdesign/16F/slide/7_systolic_architecture_design.pdf)
 
 ## p5-1~p5-12 note：Linear Scheduling
 
@@ -111,7 +112,7 @@ $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
   <img src="img/insertion_sort_eg.jpg" width="500" />
 </p>
 
-6. Processor utilization ratio = $ \frac{1}{\alpha} $
+6. Processor utilization ratio = $\frac{1}{\alpha}$
 
 7. systolic array
 
