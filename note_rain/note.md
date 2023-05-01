@@ -31,18 +31,13 @@ $\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
 
 3. Transfer matrix is
 
-$$ {\left\lbrack \bmatrix{2 & 3 \cr 4 & 5} \right\rbrack} 
-* \left\lbrack \bmatrix{1 & 0 \cr 0 & 1} \right\rbrack
-= \left\lbrack \bmatrix{2 & 3 \cr 4 & 5} \right\rbrack
-$$
-
 $$
 \begin{bmatrix}
 1 & 2 & 3 \\
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{bmatrix}
- \tag{3-4}
+\tag{3-4}
 $$
 
 $$
