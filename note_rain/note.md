@@ -78,7 +78,11 @@ $$
         \end{bmatrix}
 $$
 
-$\vec{a}$ is DG arc, $D(\vec{e})$ is edge delay, $\vec{e}$ is SFG edge
+<center>
+
+$\vec{a}$ is DG arc, $D(\vec{e})$ is edge delay, $\vec{e}$ is SFG edge 
+
+</center>
 
 - IO mapping
 
@@ -98,7 +102,11 @@ $$
         \end{bmatrix}
 $$
 
+<center>
+
 $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
+
+</center>
 
 <p align="middle">
   <img src="img/insertion_sort_eg.jpg" width="500" />
