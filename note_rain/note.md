@@ -30,8 +30,7 @@ $\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
 - time index t = $\vec{s^t} \cdot \vec{i}$, $\vec{s^t}$ is the scheduling vector
 
 3. Transfer matrix is
-T= $\begin{bmatrix} \vec{s^t} \\ P \\ \end{bmatrix}$
-$ \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ \end{bmatrix} $
+$$ T=\begin{bmatrix} \vec{s^t} \\ P \\ \end{bmatrix}$$
 
 4. Mapping procedures
 - Node mapping
