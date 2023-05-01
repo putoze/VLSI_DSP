@@ -30,6 +30,13 @@ $\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
 - time index t = $\vec{s^t} \cdot \vec{i}$, $\vec{s^t}$ is the scheduling vector
 
 3. Transfer matrix is
+$$\begin{bmatrix}
+{a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
+{a_{21}}&{a_{22}}&{\cdots}&{a_{2n}}\\
+{\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+{a_{m1}}&{a_{m2}}&{\cdots}&{a_{mn}}\\
+\end{bmatrix}$$
+
 T=$\begin{bmatrix}
 {\vec{s^t}}\\
 P\\
