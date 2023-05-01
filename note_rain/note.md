@@ -31,7 +31,7 @@ $\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
 
 3. Transfer matrix is
 T=$\begin{bmatrix}
-\vec{s^t}\\
+{\vec{s^t}}\\
 P\\
 \end{bmatrix}$
 
