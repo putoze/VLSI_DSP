@@ -23,13 +23,15 @@ $\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
 
 1. $\vec{P}$ is the processor basis or processor allocation matrix, and their dim is (N-1) * N(N is DG dimension)
 - spatial mapping
-- $P \cdot \vec{e} = 0 $ where d is projection vector
-- process index n = $ P \cdot \vec{i}$
+- $P\cdot \vec{e} = 0$ , where $\vec{d}$ is projection vector
+- process index $\vec{n}$ = $ P \cdot \vec{i}$
+
 2. Timing mapping
-- time index t = $\vec{s^t} \cdot \vec{i}, \vec{s^t}$ is the scheduling vector
+- time index t = $\vec{s^t} \cdot \vec{i}$, $\vec{s^t}$ is the scheduling vector
 
 3. Transfer matrix is
-$T=\begin{bmatrix} \vec{s^t} \\ P \\ \end{bmatrix}$
+T= $\begin{bmatrix} \vec{s^t} \\ P \\ \end{bmatrix}$
+$ \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ \end{bmatrix} $
 
 4. Mapping procedures
 - Node mapping
