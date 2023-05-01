@@ -32,9 +32,11 @@ $T=
     \vec{s^t} \\
     P
     \end{bmatrix}$
+
 4. Mapping procedures
 - Node mapping
-$\begin{bmatrix}
+$$
+        \begin{bmatrix}
         \vec{t(\vec{i})} \\
         \vec{n}
         \end{bmatrix}
@@ -46,11 +48,13 @@ $\begin{bmatrix}
         \cdot
         \begin{bmatrix}
         \vec{i} 
-        \end{bmatrix}$
-, $\vec{i}$ is DG node, $t(\vec{i})$ is schedule, $\vec{n}$ is Processor index
+        \end{bmatrix}
+$$ 
+$\vec{i}$ is DG node, $t(\vec{i})$ is schedule, $\vec{n}$ is Processor index
 
 - Arc mapping
-$\begin{bmatrix}
+$$
+        \begin{bmatrix}
         \vec{D(\vec{e})} \\
         \vec{e}
         \end{bmatrix}
@@ -62,11 +66,13 @@ $\begin{bmatrix}
         \cdot
         \begin{bmatrix}
         \vec{a} 
-        \end{bmatrix}$
-, $\vec{a}$ is DG arc, $D(\vec{e})$ is edge delay, $\vec{e}$ is SFG edge
+        \end{bmatrix}
+$$
+$\vec{a}$ is DG arc, $D(\vec{e})$ is edge delay, $\vec{e}$ is SFG edge
 
 - IO mapping
-$\begin{bmatrix}
+$$
+        \begin{bmatrix}
         \vec{t(\vec{c})} \\
         \vec{n}
         \end{bmatrix}
@@ -78,8 +84,9 @@ $\begin{bmatrix}
         \cdot
         \begin{bmatrix}
         \vec{c} 
-        \end{bmatrix}$
-, $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
+        \end{bmatrix}
+$$
+$\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
 
 <p align="middle">
   <img src="img/insertion_sort_eg.jpg" width="800" />
