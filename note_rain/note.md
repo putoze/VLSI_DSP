@@ -29,20 +29,12 @@ $\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
 2. Timing mapping
 - time index t = $\vec{s^t} \cdot \vec{i}$, $\vec{s^t}$ is the scheduling vector
 
-3. Transfer matrix is
-
-$
-T=
-\begin{bmatrix}
-{\vec{s^t}}\\
-P\\
-\end{bmatrix}
-$
+3. Transfer matrix is $T=\begin{bmatrix}{\vec{s^t}}\\P\\\end{bmatrix}$
 
 4. Mapping procedures
 - Node mapping
 
-$
+$$
         \begin{bmatrix}
         \vec{t(\vec{i})} \\
         \vec{n}
@@ -56,7 +48,7 @@ $
         \begin{bmatrix}
         \vec{i} 
         \end{bmatrix}
-$
+$$
 
 $\vec{i}$ is DG node, $t(\vec{i})$ is schedule, $\vec{n}$ is Processor index
 
@@ -108,3 +100,6 @@ $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
 
 [1] [如何在 Markdown 輸入數學公式及符號
 ](https://blog.maxkit.com.tw/2020/02/markdown.html)
+
+[2] [Markdown 文本居中、字体颜色以及数学公式
+](https://blog.csdn.net/silver1225/article/details/89036250)
