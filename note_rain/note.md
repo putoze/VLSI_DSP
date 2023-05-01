@@ -32,15 +32,6 @@ $\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
 3. Transfer matrix is
 
 $$
-\begin{bmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6 \\
-7 & 8 & 9
-\end{bmatrix}
-\tag{3-4}
-$$
-
-$$
 T=
 \begin{bmatrix}
 {\vec{s^t}}\\
@@ -48,9 +39,9 @@ P\\
 \end{bmatrix}
 $$
 
-
 4. Mapping procedures
 - Node mapping
+
 $$
         \begin{bmatrix}
         \vec{t(\vec{i})} \\
@@ -66,9 +57,11 @@ $$
         \vec{i} 
         \end{bmatrix}
 $$ 
+
 $\vec{i}$ is DG node, $t(\vec{i})$ is schedule, $\vec{n}$ is Processor index
 
 - Arc mapping
+
 $$
         \begin{bmatrix}
         \vec{D(\vec{e})} \\
@@ -84,9 +77,11 @@ $$
         \vec{a} 
         \end{bmatrix}
 $$
+
 $\vec{a}$ is DG arc, $D(\vec{e})$ is edge delay, $\vec{e}$ is SFG edge
 
 - IO mapping
+
 $$
         \begin{bmatrix}
         \vec{t(\vec{c})} \\
@@ -102,6 +97,7 @@ $$
         \vec{c} 
         \end{bmatrix}
 $$
+
 $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
 
 <p align="middle">
