@@ -7,10 +7,14 @@
 - Localized DG
 - [link](http://media.ee.ntu.edu.tw/courses/dspdesign/16F/slide/7_systolic_architecture_design.pdf)
 
-## p5-1~p5-12 note：Linear Scheduling
+## p5-1~p5-12 note： Linear Scheduling
+
+- Because DG is regular
+  - linear processor assignment: projection
+  - linear scheduling scheme: hyperplane 
 
 1. 同個hyperplane為相同執行順序
-2. 同個projection為同樣一顆processor
+2. 同個projection為同樣一顆processor(相當於決定DFG)
 3. normal vector ($\vec{s}$) 垂直於hyperplane，length由DG維度決定
 4. components of the scheduling vector $\vec{s}$ must be co-prime(互質)
 5. schedule of node i = inner product of $\vec{s}$ & i
@@ -20,7 +24,8 @@ $\vec{s^t} \cdot \vec{e} \geq 0$ for all $\vec{e}$ (單位向量)
 - Preserve parallelism <br>
 $\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
 7. Type of schedules <br>
-- default schedule => $\vec{s} = \vec{d}$ Resursion schedule => $\vec{s}$ is parallel to one of axis in the index space of the DG, usually the recursion direction
+- default schedule => $\vec{s} = \vec{d}$ 
+- Resursion schedule => $\vec{s}$ is parallel to one of axis in the index space of the DG, usually the recursion direction
 - Systolic schedule => at least one delay on each edge of SFG
 8. example 在講義5-9~5-11
 - pipeline period $\alpha = \vec{s^t} \cdot \vec{d}$ (number of clock cycles between two successive computations)
@@ -109,7 +114,7 @@ $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
 5. DG of insertion sort example
 
 <p align="middle">
-  <img src="img/insertion_sort_eg.jpg" width="500" />
+  <img src="img_ch5/insertion_sort_eg.jpg" width="500" />
 </p>
 
 6. Processor utilization ratio = $\frac{1}{\alpha}$
@@ -123,6 +128,25 @@ $\vec{c}$ is I/O node, $t(\vec{c})$ is schedule, $\vec{n}$ is Processor index
 - Modularity and regularity
 
 - Contains only local interconnection
+
+- Observe partial ordering(precedence relation) <br>
+$\vec{s^t} \cdot \vec{e} > 0$ for all $\vec{e}$ (單位向量)
+- Preserve parallelism <br>
+$\vec{s^t} \cdot \vec{d} \neq 0$ for projection vector $\vec{d}$
+
+- Recall canonical mapping procedures
+
+  - stage 1: derive a localized DG from the algorithm 
+  - state 2: map the DG to SFG array
+  - state 3: transform the SFG to a systolic array(systolization) 
+
+- Indirect two-stage mapping 
+
+  - Derive an SFG first 
+  - Apply retiming procedure to obtain systolic array design
+
+- Systolic array = SFG array + pipeline retiming
+
 
 ## Ref
 

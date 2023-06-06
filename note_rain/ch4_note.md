@@ -62,6 +62,7 @@ for i = 1~4
 - DG contains computations for all iterations in an  algorithm
 - DFG edge: may contain a delay, one delay means one iteration apart
 - DG edge: contains no delay
+- DFG compares to DG has lower dimension(至少差一個時間軸)
 
 - DFGs can be derived from DG
   - By using a space-time transform mapping scheme
@@ -90,7 +91,7 @@ for i = 1~4
   - Exchange the input output node
   - Retain the edge gain and edge delay
 - Limitations of transposition
-  - can be applied to MIMO systems described by    symmetric transform matrices
+  - can be applied to MIMO systems described by symmetric transform matrices
 - More on SFG
   - Applicable to linear network
   - Cannot be used to described multi-rate system
@@ -98,6 +99,32 @@ for i = 1~4
 <p align="middle">
   <img src="img_ch4/SFG2.png" width="500" />
 </p>
+
+## P4-22~
+
+- DFG Direct form 
+
+  - All computations of y(n) are performed in one iteration
+  - critical path longer 
+
+  <p align="middle">
+  <img src="img_ch4/direct.png" width="500" />
+  </p>
+
+- DFG Indirect(transpose) form
+
+  - computations of y(n) are performed in different iterations
+  - input broadcast 
+
+  <p align="middle">
+  <img src="img_ch4/indirect.png" width="500" />
+  </p>
+
+- DFG is a closer hardware design than DG
+
+  - DFG node can be considered as computing logic
+  - each delay element corresponds to a register
+  - each iteration is equivalent to a clock cycle
 
 ## Ref
 
