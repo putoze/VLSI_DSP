@@ -1,0 +1,85 @@
+Information: The stitching and editing of coupling caps is turned OFF for design 'QR_CORDIC.dlib:QR_CORDIC.design'. (TIM-125)
+Information: Design Average RC for design QR_CORDIC  (NEX-011)
+Information: r = 0.294716 ohm/um, via_r = 0.796287 ohm/cut, c = 0.152827 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 0.273397 ohm/um, via_r = 0.814268 ohm/cut, c = 0.146691 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 11042, routed nets = 12, across physical hierarchy nets = 0, parasitics cached nets = 11042, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : QR_CORDIC
+Version: R-2020.09-SP3
+Date   : Mon Dec  5 15:38:37 2022
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+  Startpoint: row_index_gg1_reg_2_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: in_reg_reg_0__0__11_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: slow
+  Scenario: func::slow
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.15      0.15
+
+  row_index_gg1_reg_2_/CK (DFFSX2)                 0.00      0.15 r
+  row_index_gg1_reg_2_/Q (DFFSX2)                  0.57      0.72 f
+  U7998/Y (OR2X2)                                  0.24      0.96 f
+  U9445/Y (OR2X1)                                  0.32      1.28 f
+  U10510/Y (INVX2)                                 0.40      1.68 r
+  U10779/Y (AOI22XL)                               0.21      1.89 f
+  U10778/Y (NAND4X1)                               0.31      2.20 r
+  U8285/Y (INVXL)                                  0.24      2.44 f
+  U12113/Y (NAND2XL)                               0.22      2.67 r
+  U9278/Y (AND2X4)                                 0.26      2.93 r
+  U7559/Y (CLKINVX4)                               0.23      3.15 f
+  U10757/Y (XOR2X1)                                0.18      3.34 r
+  U10630/Y (NOR2X1)                                0.12      3.45 f
+  U11228/Y (OAI21XL)                               0.26      3.72 r
+  U7411/Y (AOI21X1)                                0.13      3.84 f
+  U10818/Y (OAI21X1)                               0.22      4.06 r
+  U15268/Y (AOI21X1)                               0.14      4.20 f
+  U10817/Y (OAI21X1)                               0.20      4.40 r
+  U15269/Y (AOI21XL)                               0.20      4.60 f
+  U15271/Y (OAI21X1)                               0.38      4.99 r
+  U12555/Y (CLKXOR2X4)                             0.46      5.45 f
+  U7224/Y (CLKINVX1)                               0.34      5.78 r
+  U9935/Y (XOR2XL)                                 0.28      6.06 f
+  U8566/CO (ADDFXL)                                0.41      6.47 f
+  U9065/CO (ADDFXL)                                0.40      6.87 f
+  U9889/CO (ADDFXL)                                0.41      7.28 f
+  U10628/CO (ADDFXL)                               0.43      7.71 f
+  U9831/CO (ADDFXL)                                0.40      8.12 f
+  U15988/CO (ADDFXL)                               0.40      8.52 f
+  U16196/CO (ADDFXL)                               0.39      8.91 f
+  U16313/CO (ADDFXL)                               0.40      9.31 f
+  U10627/CO (ADDFXL)                               0.41      9.72 f
+  U16414/CO (ADDFXL)                               0.42     10.14 f
+  U16486/CO (ADDFXL)                               0.46     10.60 f
+  U9569/S (ADDFXL)                                 0.58     11.18 r
+  U16415/Y (MXI2X2)                                0.31     11.50 f
+  U16443/Y (OAI211XL)                              0.40     11.90 r
+  in_reg_reg_0__0__11_/D (DFFRXL)                  0.00     11.90 r
+  data arrival time                                         11.90
+
+  clock clk (rise edge)                           12.00     12.00
+  clock network delay (propagated)                 0.15     12.15
+  clock reconvergence pessimism                    0.00     12.15
+  in_reg_reg_0__0__11_/CK (DFFRXL)                 0.00     12.15 r
+  library setup time                              -0.29     11.86
+  data required time                                        11.86
+  ------------------------------------------------------------------------
+  data required time                                        11.86
+  data arrival time                                        -11.90
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.04
+
+
+1

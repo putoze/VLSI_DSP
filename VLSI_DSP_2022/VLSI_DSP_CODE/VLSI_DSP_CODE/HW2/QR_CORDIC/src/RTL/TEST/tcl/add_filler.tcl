@@ -1,0 +1,9 @@
+create_stdcell_fillers -lib_cells [get_lib_cells {tsmc13gfsg_physical_only/FILL1 tsmc13gfsg_physical_only/FILL16
+tsmc13gfsg_physical_only/FILL2 tsmc13gfsg_physical_only/FILL32 tsmc13gfsg_physical_only/FILL4 tsmc13gfsg_physical_only/FILL64 \
+tsmc13gfsg_physical_only/FILL8}]
+
+connect_pg_net -automatic
+
+check_routes
+
+report_timing

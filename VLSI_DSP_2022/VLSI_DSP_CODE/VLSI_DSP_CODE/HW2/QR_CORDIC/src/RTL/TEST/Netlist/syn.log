@@ -1,0 +1,783 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version N-2017.09-SP2 for linux64 - Nov 27, 2017 
+
+                    Copyright (c) 1988 - 2017 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/rain/.synopsys_dv_prefs.tcl
+#======================================================
+#
+# Synopsys Synthesis Scripts (Design Vision dctcl mode)
+#
+#======================================================
+#======================================================
+#  Set Libraries
+#======================================================
+source synopsys_dc.setup
+Information: Variable 'hdlin_translate_off_skip_text' is obsolete and is being ignored. (INFO-100)
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+1
+#======================================================
+#  Global Parameters
+#======================================================
+set DESIGN "QR_CORDIC"
+QR_CORDIC
+#======================================================
+#  Read RTL Code
+#======================================================
+set hdlin_auto_save_templates TRUE
+TRUE
+analyze -library WORK -format verilog {/home/rain/QR_CORDIC/QR_CORDIC.v}
+Running PRESTO HDLC
+Compiling source file /home/rain/QR_CORDIC/QR_CORDIC.v
+Opening include file /home/rain/QR_CORDIC/ROTATION_MODE.v
+Opening include file /home/rain/QR_CORDIC/VECTOR_MODE.v
+Presto compilation completed successfully.
+Loading db file '/usr/cad/Design_Kit/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/Design_Kit/CBDK_IC_Contest_v2.5/SynopsysDC/db/fast.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+1
+elaborate QR_CORDIC -architecture verilog -library DEFAULT
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow'
+  Loading link library 'fast'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:152: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:174: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:175: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:192: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:193: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:196: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:197: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:214: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:215: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:218: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:219: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:222: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:223: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:240: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:241: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:244: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:245: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:248: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:249: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:252: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/rain/QR_CORDIC/QR_CORDIC.v:253: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 137 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    cur_state_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 150 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     counter_reg     | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 163 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     in_reg_reg      | Flip-flop |  104  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 181 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     in_reg_reg      | Flip-flop |  104  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 203 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     in_reg_reg      | Flip-flop |  104  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 229 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     in_reg_reg      | Flip-flop |  104  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 259 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    stall_gg_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 269 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     stall_d_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 279 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    stall_d2_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 289 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    stall_d3_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 299 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    enable_gg_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 317 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    enable_d_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 327 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    enable_d2_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 337 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    enable_d3_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 347 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sign_gg3_d_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   sign_gg1_d_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   sign_gg2_d_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 357 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sign_gg1_d2_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   sign_gg2_d2_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 367 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sign_gg1_d3_reg   | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 377 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| iter_num_r_gg1_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 387 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| iter_num_r_gg2_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 397 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| iter_num_r_gg3_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 407 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| iter_num_r_gg4_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 417 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| iter_num_r_gg3_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| iter_num_r_gg1_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| iter_num_r_gg2_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 427 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| iter_num_r_gg1_d2_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| iter_num_r_gg2_d2_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 437 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| iter_num_r_gg1_d3_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 447 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  row_index_gg1_reg  | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 457 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  row_index_gg2_reg  | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 467 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  row_index_gg3_reg  | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 477 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  row_index_gg4_reg  | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 487 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| row_index_gg3_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| row_index_gg1_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| row_index_gg2_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 497 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| row_index_gg1_d2_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| row_index_gg2_d2_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 507 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| row_index_gg1_d3_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 517 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+| row_index_gg3_sub1_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| row_index_gg1_sub1_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| row_index_gg2_sub1_d_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 527 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| row_index_gg1_sub1_d2_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| row_index_gg2_sub1_d2_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+
+Inferred memory devices in process
+	in routine QR_CORDIC line 537 in file
+		'/home/rain/QR_CORDIC/QR_CORDIC.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| row_index_gg1_sub1_d3_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  QR_CORDIC/134   |   8    |   52    |      3       |
+|  QR_CORDIC/551   |   8    |   13    |      3       |
+|  QR_CORDIC/552   |   8    |   13    |      3       |
+|  QR_CORDIC/553   |   8    |   13    |      3       |
+|  QR_CORDIC/554   |   8    |   13    |      3       |
+|  QR_CORDIC/555   |   8    |   13    |      3       |
+|  QR_CORDIC/556   |   8    |   13    |      3       |
+|  QR_CORDIC/557   |   8    |   13    |      3       |
+|  QR_CORDIC/558   |   8    |   13    |      3       |
+|  QR_CORDIC/574   |   8    |   13    |      3       |
+|  QR_CORDIC/575   |   8    |   13    |      3       |
+|  QR_CORDIC/576   |   8    |   13    |      3       |
+|  QR_CORDIC/577   |   8    |   13    |      3       |
+|  QR_CORDIC/578   |   8    |   13    |      3       |
+|  QR_CORDIC/579   |   8    |   13    |      3       |
+|  QR_CORDIC/580   |   8    |   13    |      3       |
+|  QR_CORDIC/581   |   8    |   13    |      3       |
+|  QR_CORDIC/582   |   8    |   13    |      3       |
+|  QR_CORDIC/583   |   8    |   13    |      3       |
+|  QR_CORDIC/584   |   8    |   13    |      3       |
+|  QR_CORDIC/585   |   8    |   13    |      3       |
+======================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'QR_CORDIC'.
+Information: Building the design 'VECTOR_MODE' instantiated from design 'QR_CORDIC' with
+	the parameters "DATA_LENGTH=13,ITER_IDX=3,NUM_SIGN=2". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ROTATION_MODE' instantiated from design 'QR_CORDIC' with
+	the parameters "DATA_LENGTH=13,ITER_IDX=3,NUM_SIGN=2". (HDL-193)
+Presto compilation completed successfully.
+1
+current_design $DESIGN
+Current design is 'QR_CORDIC'.
+{QR_CORDIC}
+link > Report/$DESIGN\.link
+#======================================================
+#  Set Design Constraints
+#======================================================
+source -echo -verbose syn_tcl/$DESIGN\.sdc
+# operating conditions and boundary conditions #
+set clk_period 12.0
+12.0
+create_clock -name "clk" -period $clk_period clk 
+1
+set_dont_touch_network      [all_clocks]
+1
+set_fix_hold                [all_clocks]
+1
+set_clock_uncertainty  0.1  [all_clocks]
+1
+set_clock_latency      0.5  [all_clocks]
+1
+#set_ideal_network           [get_ports CLK]
+set_input_delay  [ expr $clk_period*0.5 ] -clock clk [all_inputs]
+1
+set_output_delay [ expr $clk_period*0.5 ] -clock clk [all_outputs]
+1
+set_input_delay 0 -clock clk rst_n
+1
+set_load 1 [all_outputs]
+1
+set_drive        0.1   [all_inputs]
+1
+set_operating_conditions -max_library slow -max slow
+Using operating conditions 'slow' found in library 'slow'.
+1
+set_wire_load_model -name tsmc13_wl10 -library slow                        
+1
+set_max_fanout 20 [all_inputs]
+1
+set_max_delay $clk_period -from [all_inputs] -to [all_outputs]
+1
+1
+#set_dont_use slow/JKFF*
+#======================================================
+#  Optimization
+#======================================================
+check_design > Report/$DESIGN\.check
+uniquify
+Information: Uniquified 4 instances of design 'VECTOR_MODE_DATA_LENGTH13_ITER_IDX3_NUM_SIGN2'. (OPT-1056)
+Information: Uniquified 6 instances of design 'ROTATION_MODE_DATA_LENGTH13_ITER_IDX3_NUM_SIGN2'. (OPT-1056)
+1
+set_fix_multiple_port_nets -all -buffer_constants
+1
+current_design $DESIGN
+Current design is 'QR_CORDIC'.
+{QR_CORDIC}
+#set_false_path -from clk -to [get_cells */latch_or_sleep_reg ]
+#uniquify
+compile_ultra -area
+Warning: The -area_high_effort_script option is ignored. To enable further area optimization, use the optimize_netlist -area command. (OPT-1341)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | N-2017.09-DWBB_201709.2 |     *     |
+| Licensed DW Building Blocks        | N-2017.09-DWBB_201709.2 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 60 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'QR_CORDIC'
+
+  Loading target library 'fast'
+Loaded alib file './alib-52/slow.db.alib'
+Loaded alib file './alib-52/fast.db.alib'
+Warning: Operating condition slow set on design QR_CORDIC has different process,
+voltage and temperatures parameters than the parameters at which target library 
+fast is characterized. Delays may be inaccurate as a result. (OPT-998)
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy inst_GG1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GR1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GG4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GG3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GG2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GR6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GR5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GR4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GR3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy inst_GR2 before Pass 1 (OPT-776)
+Information: Ungrouping 10 of 11 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'QR_CORDIC'
+Information: Added key list 'DesignWare' to design 'QR_CORDIC'. (DDB-72)
+Information: The register 'iter_num_r_gg3_d_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg2_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg2_d_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg2_d2_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg1_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg1_d_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg1_d2_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg1_d3_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg3_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iter_num_r_gg4_reg[0]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'QR_CORDIC'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Mapping 'QR_CORDIC_DP_OP_433_244_1526_2'
+  Mapping 'QR_CORDIC_DP_OP_428_242_9452_2'
+  Mapping 'QR_CORDIC_DP_OP_370_257_848_2'
+  Mapping 'QR_CORDIC_DP_OP_454_252_9690_2'
+  Mapping 'QR_CORDIC_DP_OP_449_246_7649_2'
+  Mapping 'QR_CORDIC_DP_OP_365_250_6019_2'
+  Mapping 'QR_CORDIC_DP_OP_412_254_3329_2'
+  Mapping 'QR_CORDIC_DP_OP_407_248_2413_2'
+  Mapping 'QR_CORDIC_DP_OP_386_278_4216_2'
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:43  140661.8      2.73     235.4      52.7                           110582808.0000      0.00  
+    0:00:44  147032.2      0.00       0.0      54.6                           119471928.0000      0.00  
+    0:00:44  147032.2      0.00       0.0      54.6                           119471928.0000      0.00  
+    0:00:45  146977.9      0.00       0.0      54.6                           119442480.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:51  141093.0      0.02       0.0      51.5                           113230464.0000      0.00  
+    0:00:51  140945.3      0.00       0.0      54.5                           113026920.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:52  135483.1      0.00       0.0      52.0                           107330696.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:00:53  134763.4      0.00       0.0       0.0                           105334968.0000      0.00  
+    0:00:53  134763.4      0.00       0.0       0.0                           105334968.0000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:53  134763.4      0.00       0.0       0.0                           105334968.0000      0.00  
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+    0:00:58  130828.8      0.00       0.0       0.0                           99202040.0000      0.00  
+    0:00:58  130828.8      0.00       0.0       0.0                           99202040.0000      0.00  
+    0:00:58  130828.8      0.00       0.0       0.0                           99202040.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:59  129751.0      0.00       0.0       0.0                           98015608.0000      0.00  
+    0:01:01  125841.8      0.00       0.0       0.0                           94896872.0000      0.00  
+    0:01:01  125841.8      0.00       0.0       0.0                           94896872.0000      0.00  
+    0:01:01  125841.8      0.00       0.0       0.0                           94896872.0000      0.00  
+    0:01:01  125758.7      0.00       0.0       0.0                           94801304.0000      0.00  
+    0:01:03  124898.1      0.00       0.0       0.0                           93572144.0000      0.00  
+    0:01:03  124898.1      0.00       0.0       0.0                           93572144.0000      0.00  
+    0:01:03  124898.1      0.00       0.0       0.0                           93572144.0000      0.00  
+    0:01:03  124898.1      0.00       0.0       0.0                           93572144.0000      0.00  
+    0:01:07  120669.9      0.00       0.0       0.0                           88974752.0000      0.00  
+Loading db file '/usr/cad/Design_Kit/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/Design_Kit/CBDK_IC_Contest_v2.5/SynopsysDC/db/fast.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+  Loading target library 'fast'
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#======================================================
+#  Output Reports 
+#======================================================
+report_timing >  Report/$DESIGN\.timing
+report_area >  Report/$DESIGN\.area
+report_power >  Report/$DESIGN\.power
+report_resource >  Report/$DESIGN\.resource
+#======================================================
+#  Change Naming Rule
+#======================================================
+set bus_inference_style "%s\[%d\]"
+%s[%d]
+set bus_naming_style "%s\[%d\]"
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _" -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _[]" -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+change_names -hierarchy -rules name_rule
+1
+#======================================================
+#  Output Results
+#======================================================
+set verilogout_higher_designs_first true
+true
+write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
+Writing verilog file '/home/rain/QR_CORDIC/Netlist/QR_CORDIC_SYN.v'.
+1
+#set_annotated_delay 0 -cell -to [get_pins -filter "pin_direction == out" -of_objects [get_cells "GATED_*/U*" -filter "ref_name==OR2X1"]]
+#set_annotated_delay 0 -cell -to [get_pins -filter "pin_direction == out" -of_objects [get_cells "GATED_*/latch*" -filter "ref_name==TLATRX1"]]
+write_sdf -version 3.0 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf -significant_digits 6
+Information: Writing timing information to file '/home/rain/QR_CORDIC/Netlist/QR_CORDIC_SYN.sdf'. (WT-3)
+1
+write_sdc Netlist/$DESIGN\_SYN.sdc
+1
+#======================================================
+#  Finish and Quit
+#======================================================
+exit
+
+Thank you...

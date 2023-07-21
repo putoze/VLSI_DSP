@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : QR_CORDIC
+Version: N-2017.09-SP2
+Date   : Tue May 10 16:24:38 2022
+****************************************
+
+Library(s) Used:
+
+    slow (File: /usr/cad/Design_Kit/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db)
+
+Number of ports:                         1700
+Number of nets:                          5148
+Number of cells:                         2824
+Number of combinational cells:           2630
+Number of sequential cells:               158
+Number of macros/black boxes:               0
+Number of buf/inv:                        604
+Number of references:                      44
+
+Combinational area:              43611.299467
+Buf/Inv area:                     2868.605955
+Noncombinational area:            3997.376869
+Macro/Black Box area:                0.000000
+Net Interconnect area:          359755.123840
+
+Total cell area:                 47608.676336
+Total area:                     407363.800176
+1

@@ -1,0 +1,203 @@
+Error: Library Compiler executable path is not set. (PT-063)
+
+                                 PrimeTime (R)
+
+                 Version R-2020.09 for linux64 - Aug 26, 2020 
+
+                    Copyright (c) 1988 - 2020 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+# specify parameters
+#source synopsys_dc.setup
+set DESIGN "QR_CORDIC"
+QR_CORDIC
+#Step 1 Read in the design data, which includes a gate-level netlist and associated logic libraries.
+set search_path      "/usr/cad/Design_Kit/CBDK_IC_Contest_v2.1/SynopsysDC/db/ $search_path"
+/usr/cad/Design_Kit/CBDK_IC_Contest_v2.1/SynopsysDC/db/ 
+#set link_library { slow.db dw_foundation.sldb }
+set link_path "* slow.db"
+* slow.db
+read_verilog "./Netlist/QR_CORDIC_SYN.v"
+1
+current_design $DESIGN
+Information: current_design won't return any data before link (DES-071)
+link_design -keep_sub_designs $DESIGN
+Loading verilog file '/home/rain/QR_CORDIC/Netlist/QR_CORDIC_SYN.v'
+Loading db file '/usr/cad/Design_Kit/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
+Error: -keep_sub_design option of link_design has been made obsolete starting with the 2019.12 release of PrimeTime and is no longer supported. (PT-008)
+Linking design QR_CORDIC...
+Information: 443 (84.06%) library cells are unused in library slow..... (LNK-045)
+Information: total 443 library cells are unused (LNK-046)
+Design 'QR_CORDIC' was successfully linked.
+Information: There are 10008 leaf cells, ports, hiers and 10812 nets in the design (LNK-047)
+1
+#create_clock -period $CLK_period CLK
+read_sdc "./Netlist/QR_CORDIC_SYN.sdc"
+
+Reading SDC version 2.1...
+Warning: SDC version in file (2.0) does not match the version you requested
+	from read_sdc (2.1).  Some constraints and options may not function. (SDC-2)
+Warning: SDC version in file (2.0) does not match the version you requested
+	from read_sdc (2.1).  Some constraints and options may not function. (SDC-2)
+Warning: Setting input delay on clock port (clk) relative to a clock (clk) defined at the same port. Command is ignored. (UITE-489)
+1
+1
+#Step 6 Specify case and mode analysis settings.
+#Step 7 Back-annotate delay and parasitics.
+read_sdf "./Netlist/QR_CORDIC_SYN.sdf"
+
+****************************************
+Report : read_sdf /home/rain/QR_CORDIC/Netlist/QR_CORDIC_SYN.sdf
+	-load_delay cell
+	-analysis_type on_chip_variation
+	-min_type sdf_min
+	-max_type sdf_max
+Design : QR_CORDIC
+Version: R-2020.09
+Date   : Mon Dec  5 14:25:59 2022
+****************************************
+
+        0 error(s)
+        Number of annotated cell delay arcs :     70801
+        Number of annotated net delay arcs  :     29161
+        Number of annotated timing checks   :      3126
+        Number of annotated constraints     :      1563
+        TEMPERATURE: 125.00 (min)  125.00 (max)
+        VOLTAGE    : 1.08 (min)  1.08 (max)
+        PROCESS    : slow (min)  slow (max)
+1
+# set_annotated_check 
+foreach_in_collection x [get_cell */*/A1_reg] {
+  set_annotated_check -0 -setup -from [get_object_name $x]/CK -to [get_object_name $x]/D -clock rise
+  set_annotated_check -0 -hold  -from [get_object_name $x]/CK -to [get_object_name $x]/D -clock rise
+}
+Warning: No cell objects matched '*/*/A1_reg' (SEL-004)
+Error: Nothing matched for cells (SEL-005)
+write_sdf PT/$DESIGN\_SYN_pt.sdf
+Warning: Zero transition time will be used at to pins of annotated arcs. Delays on not annotated delay arcs will be estimated using best available slew.  (PTE-066)
+Information: Building multi voltage information for entire design. (MV-022)
+Information: Zero transition time used at to pin of annotated arcs. Delays on not annotated delay arcs will be estimated using best available slew.  (PTE-054)
+Information: Zero transition time used at to pin of annotated arcs. Delays on not annotated delay arcs will be estimated using best available slew.  (PTE-054)
+1
+write_sdc PT/$DESIGN\_SYN_pt.sdc
+Information: SDC supports a subset of the constraints supported by PrimeTime. Some constraints cannot be preserved by the write_sdc command. (WSCR-002)
+1
+#Step 8 (Optional) Apply variation.
+#Step 9 Specify power information
+#Step 10 (Optional) Specify options and data for signal integrity analysis.
+#Step 11 (Optional) Apply options for specific design techniques.
+#Step 12 Check the design data and analysis setup.
+check_timing
+Information: Checking 'no_input_delay'.
+Information: Checking 'no_driving_cell'.
+Information: Checking 'unconstrained_endpoints'.
+Information: Checking 'unexpandable_clocks'.
+Information: Checking 'latch_fanout'.
+Information: Checking 'no_clock'.
+Information: Checking 'partial_input_delay'.
+Information: Checking 'generic'.
+Information: Checking 'loops'.
+Information: Checking 'generated_clocks'.
+Information: Checking 'pulse_clock_non_pulse_clock_merge'.
+Information: Checking 'pll_configuration'.
+check_timing succeeded.
+1
+#Step 13 Perform a full timing analysis and examine the results.
+report_timing
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : QR_CORDIC
+Version: R-2020.09
+Date   : Mon Dec  5 14:25:59 2022
+****************************************
+
+
+  Startpoint: cur_state_reg_0_
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: in_reg_reg_1__3__12_
+               (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  cur_state_reg_0_/CK (DFFRX2)                            0.00       0.00 r
+  cur_state_reg_0_/Q (DFFRX2)                             0.56 *     0.56 f
+  U11058/Y (CLKBUFX3)                                     0.39 *     0.95 f
+  U9446/Y (NAND2XL)                                       0.54 *     1.49 r
+  U11160/Y (OAI22XL)                                      0.17 *     1.66 f
+  U8262/Y (AOI21XL)                                       0.16 *     1.81 r
+  U8261/Y (OAI211XL)                                      0.16 *     1.97 f
+  U11198/Y (AOI22XL)                                      0.23 *     2.20 r
+  U7831/Y (OAI211XL)                                      0.13 *     2.34 f
+  U11200/Y (XOR2X1)                                       0.18 *     2.52 f
+  U11201/CO (ADDFXL)                                      0.38 *     2.90 f
+  U11287/CO (ADDFXL)                                      0.38 *     3.28 f
+  U11291/CO (ADDFXL)                                      0.38 *     3.65 f
+  U11300/CO (ADDFXL)                                      0.38 *     4.03 f
+  U11290/CO (ADDFXL)                                      0.38 *     4.40 f
+  U11296/CO (ADDFXL)                                      0.38 *     4.78 f
+  U11288/CO (ADDFXL)                                      0.38 *     5.16 f
+  U11298/CO (ADDFXL)                                      0.38 *     5.53 f
+  U7538/CO (ADDFXL)                                       0.39 *     5.92 f
+  U11597/S (ADDFX1)                                       0.35 *     6.27 r
+  U11432/Y (MXI2X1)                                       0.12 *     6.39 f
+  U11433/Y (OAI222XL)                                     0.35 *     6.74 r
+  U11434/Y (XOR2X1)                                       0.24 *     6.99 f
+  U11613/CO (ADDFXL)                                      0.57 *     7.56 f
+  U12166/CO (ADDFXL)                                      0.38 *     7.93 f
+  U12213/CO (ADDFXL)                                      0.38 *     8.31 f
+  U12065/CO (ADDFXL)                                      0.38 *     8.68 f
+  U12106/CO (ADDFXL)                                      0.38 *     9.06 f
+  U12287/CO (ADDFXL)                                      0.38 *     9.44 f
+  U14645/CO (ADDFXL)                                      0.38 *     9.81 f
+  U6937/CO (ADDFXL)                                       0.39 *    10.20 f
+  U14911/CO (ADDFX1)                                      0.29 *    10.49 f
+  U15002/CO (ADDFX1)                                      0.27 *    10.76 f
+  U15004/Y (XOR2X1)                                       0.15 *    10.91 f
+  U15005/Y (MXI2X1)                                       0.27 *    11.18 r
+  U15135/Y (OAI22XL)                                      0.16 *    11.34 f
+  U15136/Y (AOI211XL)                                     0.22 *    11.56 r
+  U15137/Y (OAI21XL)                                      0.10 *    11.66 f
+  U9169/Y (NAND2XL)                                       0.12 *    11.78 r
+  U15140/Y (OAI211X1)                                     0.09 *    11.88 f
+  in_reg_reg_1__3__12_/D (DFFRX2)                         0.00 *    11.88 f
+  data arrival time                                                 11.88
+
+  clock clk (rise edge)                                  12.00      12.00
+  clock network delay (ideal)                             0.00      12.00
+  clock reconvergence pessimism                           0.00      12.00
+  in_reg_reg_1__3__12_/CK (DFFRX2)                                  12.00 r
+  library setup time                                     -0.12 *    11.88
+  data required time                                                11.88
+  ------------------------------------------------------------------------------
+  data required time                                                11.88
+  data arrival time                                                -11.88
+  ------------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+#Step 14 (Optional) Perform ECO to fix timing violations and recover power.
+#Step 15 Save the PrimeTime session.
+#save_session
+exit
+Information: Defining new variable 'x'. (CMD-041)
+Information: Defining new variable 'DESIGN'. (CMD-041)
+
+Timing updates: 1 (1 implicit, 0 explicit) (0 incremental, 1 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 1224.70 MB
+CPU usage for this session: 5 seconds 
+Elapsed time for this session: 9 seconds
+Diagnostics summary: 3 errors, 5 warnings, 10 informationals
+
+Thank you for using pt_shell!

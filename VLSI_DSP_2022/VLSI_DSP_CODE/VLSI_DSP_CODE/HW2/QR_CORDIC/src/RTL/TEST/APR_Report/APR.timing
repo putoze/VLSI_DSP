@@ -1,0 +1,80 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : QR_CORDIC
+Version: R-2020.09-SP3
+Date   : Mon Dec  5 15:43:11 2022
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+  Startpoint: row_index_gg1_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: in_reg_reg_5__0__12_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: slow
+  Scenario: func::slow
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.15      0.15
+
+  row_index_gg1_reg_0_/CK (DFFSX2)                 0.00      0.15 r
+  row_index_gg1_reg_0_/Q (DFFSX2)                  0.61      0.75 f
+  U12004/Y (OR2X4)                                 0.21      0.96 f
+  U10809/Y (NOR2X2)                                0.72      1.69 r
+  U11721/Y (AO22X1)                                0.34      2.03 r
+  U11720/Y (NOR4X1)                                0.15      2.18 f
+  U7670/Y (NOR2XL)                                 0.35      2.53 r
+  U9311/Y (INVXL)                                  0.17      2.70 f
+  U11182/Y (OAI21XL)                               0.36      3.06 r
+  U11181/Y (XOR2X1)                                0.23      3.29 r
+  U7522/Y (NAND2XL)                                0.14      3.43 f
+  U11847/Y (INVXL)                                 0.19      3.62 r
+  U15256/Y (AOI21X2)                               0.10      3.72 f
+  U15258/Y (OAI21X2)                               0.15      3.88 r
+  U15259/Y (AOI21X1)                               0.12      4.00 f
+  U15260/Y (OAI21X1)                               0.22      4.22 r
+  U15262/Y (AOI21X1)                               0.16      4.38 f
+  U15263/Y (OAI21X1)                               0.26      4.64 r
+  U15264/Y (AOI21X1)                               0.14      4.78 f
+  U10713/Y (OA21X1)                                0.45      5.23 f
+  U12555/Y (CLKXOR2X4)                             0.37      5.60 r
+  U7224/Y (CLKINVX1)                               0.36      5.96 f
+  U9935/Y (XOR2XL)                                 0.30      6.26 f
+  U8566/CO (ADDFXL)                                0.42      6.68 f
+  U9065/CO (ADDFXL)                                0.40      7.08 f
+  U9889/CO (ADDFXL)                                0.42      7.50 f
+  U10628/CO (ADDFXL)                               0.43      7.93 f
+  U9831/CO (ADDFXL)                                0.40      8.34 f
+  U15988/CO (ADDFXL)                               0.40      8.74 f
+  U16196/CO (ADDFXL)                               0.40      9.14 f
+  U16313/CO (ADDFXL)                               0.41      9.54 f
+  U10627/CO (ADDFXL)                               0.41      9.95 f
+  U16414/CO (ADDFXL)                               0.43     10.38 f
+  U16486/CO (ADDFXL)                               0.46     10.84 f
+  U9569/CO (ADDFXL)                                0.44     11.28 f
+  U8462/Y (INVX1)                                  0.13     11.41 r
+  U8841/Y (MXI2X1)                                 0.29     11.70 f
+  U16474/Y (OAI211XL)                              0.46     12.16 r
+  in_reg_reg_5__0__12_/D (DFFRXL)                  0.00     12.16 r
+  data arrival time                                         12.16
+
+  clock clk (rise edge)                           12.00     12.00
+  clock network delay (propagated)                 0.15     12.15
+  clock reconvergence pessimism                    0.00     12.15
+  in_reg_reg_5__0__12_/CK (DFFRXL)                 0.00     12.15 r
+  library setup time                              -0.29     11.86
+  data required time                                        11.86
+  ------------------------------------------------------------------------
+  data required time                                        11.86
+  data arrival time                                        -12.16
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.30
+
+
+1
